@@ -2,8 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:path_provider/path_provider.dart';
 import 'package:temp_mail_gen/temp_mail_gen.dart';
+import 'package:test/test.dart';
+import 'package:wordpress_client/responses.dart';
 import 'package:wordpress_client/src/requests/create/create_user.dart';
 import 'package:wordpress_client/src/requests/list/list_category.dart';
 import 'package:wordpress_client/src/requests/list/list_media.dart';
@@ -25,7 +26,6 @@ Future<void> main() async {
   WordpressClient client;
   TempMailClient tempMailClient;
 
-  final cachePath = (await getTemporaryDirectory()).path;
   final jsonFileContents = await File('test/test_settings.json').readAsString();
   final dynamic json = jsonDecode(jsonFileContents);
 
@@ -35,7 +35,7 @@ Future<void> main() async {
     bootstrapper: (builder) => builder
         .withDefaultMaxRedirects(5)
         .withFollowRedirects(true)
-        .withRequestTimeout(60)
+        .withRequestTimeout(const Duration(seconds: 60))
         .withStatisticDelegate((requestUrl, endpoint, count) {
           print('$requestUrl => $endpoint => $count');
         })

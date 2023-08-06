@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
 import 'constants.dart';
+import 'typedefs.dart';
 import 'wordpress_client_base.dart';
 
 class BootstrapConfiguration {
@@ -20,7 +21,7 @@ class BootstrapConfiguration {
   });
 
   final bool enableDebugMode;
-  final int requestTimeout;
+  final Duration requestTimeout;
   final bool Function(dynamic)? responsePreprocessorDelegate;
   final IAuthorization? defaultAuthorization;
   final String? defaultUserAgent;

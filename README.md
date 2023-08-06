@@ -5,9 +5,7 @@
 
 ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white)
 
-[![likes](https://badges.bar/wordpress_client/likes)](https://pub.dev/packages/wordpress_client/score) [![popularity](https://badges.bar/wordpress_client/popularity)](https://pub.dev/packages/wordpress_client/score) [![pub points](https://badges.bar/wordpress_client/pub%20points)](https://pub.dev/packages/wordpress_client/score)
-
-**wordpress_client** is a library written purely in Dart to interact with Wordpress REST API in a fluent pattern. This library is a port of [WordpressCore](https://github.com/ArunPrakashG/WordpressCore) library written in C# (also written by me)
+**wordpress_client** is a library written purely in Dart to interact with Wordpress REST API in a fluent pattern.
 
 </div>
 
@@ -31,7 +29,7 @@ You can use this library just like any other Dart package.
 
 ```dart
 dependencies:
-  wordpress_client: ^6.3.3
+  wordpress_client: ^7.0.0
 ```
 
 - Import the library to your project class in which you want to use the library.
@@ -49,7 +47,7 @@ import 'package:wordpress_client/wordpress_client.dart';
 ### Simple method
 
 ```dart
-WordpressClient client = new WordpressClient('https://www.replaceme.com/', 'wp-json/wp/v2');
+WordpressClient client = new WordpressClient.initialize('https://www.replaceme.com/', 'wp-json/wp/v2');
 ```
 
 You can read about advanced method in [Advanced Method](https://github.com/ArunPrakashG/wordpress_client/wiki/Usage#advanced-method) wiki page.
